@@ -12,6 +12,7 @@ void PrintDeltaI(){
 
       if(bandHold == false){
         deltaI = LeerDeltaI(1,escala);//obtenemos deltaI calibrado
+        //EnviarDatos(deltaI);
         PrintDeltaILCD(deltaI,escala);
       }else{
         //estamos en holld

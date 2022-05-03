@@ -7,8 +7,8 @@
 
 #include <LiquidCrystal_I2C.h>
 
-
-
+#include <Variables.h>
+#include <function.h>
 #include <Setup.h>
 #include <Calibracion.h>
 #include <LeerDeltaI.h>
@@ -46,6 +46,9 @@ void loop(void)
     //SelectPotencia();
 
     delay(10);
+
+    webSocket.loop();
+
 
   }
 

@@ -1,13 +1,15 @@
 # SEV-WS-I
 Este proyecto parte de la base que tenemos en SEV_Corriente, lo que moficamos es que toda la comunicacion se realiza mediante WebSocket.
 
-Version: 0.1
-    Esta version contiene de base el soft anterior (comunicacion por HTTP->POST). 
-
-
-
-
-
 Inicio de Proyecto: 20-12-2021
 
-Ultima Modificacion: 20-12-2021
+Version: 0.1 -->  20-12-2021
+    Esta version contiene de base el soft anterior (comunicacion por HTTP->POST). 
+
+Version 0.5  -->  03-05-2022
+    En esta version trabajamos en:
+     * Conexión a red Wifi.
+     * Conexión a WebSocket.
+     * Respuesta a Check Funcionamiento.
+
+

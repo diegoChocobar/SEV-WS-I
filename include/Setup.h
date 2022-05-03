@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#include <Variables.h>
+//#include <Variables.h>
 #include <PrintNumber.h>
 
 #include <Conectar_WiFi.h>
@@ -92,7 +92,7 @@ void SaludoInicial(){
     lcd.setCursor(0, 0);
     lcd.print("***CDC Elctronics***");
     lcd.setCursor(0, 1);
-    lcd.print("*SEV-I4.0 -> GIT-4.4");
+    lcd.print("*SEV-WS-I -> GIT-0.1");
     lcd.setCursor(0, 2);
     lcd.print("cel:+54-0387-5312963");
     lcd.setCursor(0, 3);

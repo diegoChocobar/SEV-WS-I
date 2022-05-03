@@ -1,8 +1,14 @@
 #include <Arduino.h>
 #include <Wire.h>
-//#include <Adafruit_ADS1015.h>
-#include <Adafruit_ADS1X15.h>
-#include <LiquidCrystal_I2C.h>
+
+#include <WebSocketsClient.h>
+//#include <ArduinoWebsockets.h>
+
+#include <Hash.h>
+
+#include <stdarg.h>
+#include <avr/dtostrf.h>
+
 
 ////////////////VARIABLES PARA MANEJO DEL LCD //////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -60,3 +66,20 @@ unsigned long tiempo_pulsadorZ = 0;  //pulsador de puesta a caro la medicion
 unsigned long tiempo_pulsadorE = 0;  //pulsador de selector de escala
 unsigned long tiempo_pulsadorS = 0;  //pulsador de selector de potencia
 unsigned long tiempo_pulsadorH = 0;  //pulsador de congelar medicion
+
+////////////////INCIALIZAR wifi /////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////    
+const char* ssid = "SEV_WiFi";
+const char* password = "ChDi1088";
+
+WebSocketsClient webSocket;
+
+int Num_Dispositivos = 0;
+int Num_Disp_Check = 0;
+
+
+bool isValidsendMessage = true;
+bool isRecivedPhone = false;
+
+
+////////////////////////////////////////////////////////////////////////////////
