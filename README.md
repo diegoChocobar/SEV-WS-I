@@ -12,4 +12,8 @@ Version 0.5  -->  03-05-2022
      * Conexión a WebSocket.
      * Respuesta a Check Funcionamiento.
 
-
+Version 0.6 -->  04-05-2022
+    En esta version trabajamos en:
+     * Mejora en visor de valores en lcd.
+     * Calibración desactivada y Rshunt = 1.
+     * Funcion de Enviar datos OK

@@ -38,7 +38,7 @@ float LeerDeltaI(int canal, int escala){
     }
     //*/
   }else{
-    tension = float( ((data / Iteraciones) * constanteADS) - offset_2);
+    tension = float((data / Iteraciones) * constanteADS);
     tension = Calibrar(tension,escala);
     corriente = float( (tension / constanteRshunt) - offset_2);
     ///*
