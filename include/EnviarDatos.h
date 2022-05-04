@@ -13,7 +13,7 @@ void EnviarDatos(float x){
     corriente = x;
 
     String string_i = String(corriente,2);
-    String str_final = "SEV_I/SEV_C/Corrient/" + string_i;
+    String str_final = "SEV_I/SEV_C/Corriente/" + string_i;
     
     webSocket.sendTXT(str_final);
 

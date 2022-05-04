@@ -54,7 +54,7 @@ void Conectar_WiFi(){
     lcd.setCursor(0, 3);
     lcd.print("********************");
 
-    delay(5500);
+    delay(2000);
     digitalWrite(output_led, LOW);
 
 

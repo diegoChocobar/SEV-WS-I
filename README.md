@@ -17,3 +17,8 @@ Version 0.6 -->  04-05-2022
      * Mejora en visor de valores en lcd.
      * Calibración desactivada y Rshunt = 1.
      * Funcion de Enviar datos OK
+
+Version 0.61 -->  04-05-2022
+    En esta version trabajamos en:
+     * Correcion string Envio de datos
+     * Mejora en el tiempo de muestreo de carteles de inicio
