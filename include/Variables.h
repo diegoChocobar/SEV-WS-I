@@ -38,6 +38,7 @@ float constanteADS;
 int escala;
 boolean bandZero=true;
 boolean bandHold=false;
+boolean señalhold = false;
 
 float constanteRshunt = 1.00;
 

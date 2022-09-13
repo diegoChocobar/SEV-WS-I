@@ -1,3 +1,4 @@
+
 # SEV-WS-I
 Este proyecto parte de la base que tenemos en SEV_Corriente, lo que moficamos es que toda la comunicacion se realiza mediante WebSocket.
 
@@ -22,3 +23,8 @@ Version 0.61 -->  04-05-2022
     En esta version trabajamos en:
      * Correcion string Envio de datos
      * Mejora en el tiempo de muestreo de carteles de inicio
+
+Version 0.7  --> 13-09-2022
+    En esta version trabajamos en:
+     * en function incluimos la recepcion de dato por websocket para hacer hold
+     * ya no recibimos señal digital para hacer hold
