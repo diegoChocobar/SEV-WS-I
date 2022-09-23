@@ -50,8 +50,8 @@ void setup(void)
   //ads.setGain(GAIN_EIGHT);constanteADS=0.015625;escala =8;      // 8x gain   +/- 0.512V  1 bit = 0.25mV   0.015625mV
   //ads.setGain(GAIN_SIXTEEN);constanteADS=0.0078125;escala =16;    // 16x gain  +/- 0.256V  1 bit = 0.125mV  0.0078125mV
 
-  //ads.setDataRate(RATE_ADS1015_490SPS);
-  ads.setDataRate(RATE_ADS1115_32SPS);
+  ads.setDataRate(RATE_ADS1015_490SPS);
+  //ads.setDataRate(RATE_ADS1115_32SPS);
   
   ads.begin();
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,17 +82,11 @@ void setup(void)
 }
 
 void SaludoInicial(){
-
-    //Serial.println("********************");
-    //Serial.println("***CDC Elctronics***");
-    //Serial.println("*****SEV - v1.0*****");
-    //Serial.println("INICIO DE MEDICIONES");
-    //Serial.println("********************");
    
     lcd.setCursor(0, 0);
     lcd.print("***CDC Elctronics***");
     lcd.setCursor(0, 1);
-    lcd.print("*SEV-WS-I -> GIT-0.7");
+    lcd.print("*SEV-WS-I -> GIT-0.9");
     lcd.setCursor(0, 2);
     lcd.print("cel:+54-0387-5312963");
     lcd.setCursor(0, 3);

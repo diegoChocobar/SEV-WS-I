@@ -18,3 +18,12 @@ void EnviarDatos(float x){
     webSocket.sendTXT(str_final);
 
 }
+
+void EnviarHold(String hold){
+
+    //String string_h = String(hold);
+
+    String str_final = "SEV_I/SEV_V/Hold/" + hold;
+    webSocket.sendTXT(str_final);
+
+}

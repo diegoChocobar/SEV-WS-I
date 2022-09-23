@@ -33,8 +33,6 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
 
   unsigned long unidad,decena,centena,mil,diezmil;
   boolean negativo = false;
-  //x = float(x * constanteRshunt);//llevamos "x" a tension para poder evaluar en que escala debe trabajar el conversor ad1115
-  //x = abs(x);//abs redondea el numero a entero (no usar en este caso)
 
   if(x < 0){
     x = x * -1;

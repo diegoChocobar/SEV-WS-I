@@ -28,3 +28,9 @@ Version 0.7  --> 13-09-2022
     En esta version trabajamos en:
      * en function incluimos la recepcion de dato por websocket para hacer hold
      * ya no recibimos señal digital para hacer hold
+
+Version 0.9 --> 23-09-2022
+    En esta version trabajamos en:
+     * Reemplazamos HoldSet por Hold, ahora recibimos la orden de hold por el pulsador y la enviamos a la placa de tension
+     * Cambiamos la velocidad de toma de datos de sensor ads1115, la dejamos en 490sps al igual que la placa de tension
+     * La calibracion se encuentra desactivada

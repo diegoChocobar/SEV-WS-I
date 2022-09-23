@@ -10,11 +10,12 @@
 #include <Variables.h>
 #include <function.h>
 #include <Setup.h>
+#include <EnviarDatos.h>
 #include <Calibracion.h>
 #include <LeerDeltaI.h>
 #include <SelectEscala.h>
 #include <ZeroOffSet.h>
-#include <HoldSet.h>
+#include <Hold.h>
 #include <PrintDeltaI.h>
 #include <SelectPotencia.h>
 
@@ -41,7 +42,7 @@ void loop(void)
 
     ZeroOffSet();
 
-    HoldSet();
+    Hold();
 
     //SelectPotencia();
 
