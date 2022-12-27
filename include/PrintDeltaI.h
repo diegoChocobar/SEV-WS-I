@@ -6,7 +6,7 @@ void PrintDeltaI(){
 
   float deltaIf = 0; //corriente de fuga, nos sirve para activar o desactivar el sonido
 
-  if(tiempo_actual > tiempo_LCD + 500){
+  if(tiempo_actual > tiempo_LCD + 300){
       //pasaron 500ms
       tiempo_LCD = tiempo_actual;
 

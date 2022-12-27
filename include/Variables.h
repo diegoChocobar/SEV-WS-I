@@ -38,8 +38,12 @@ float constanteADS;
 int escala;
 boolean bandZero=true;
 boolean bandHold=false;
+boolean bandDisparo=true;
+boolean bandDisparoWEB=false;
+boolean bandDisparoWEBAnt=false;
 boolean señalhold = false;
 
+//float constanteRshunt = 1.0326;
 float constanteRshunt = 1.00;
 
 float offset_1 = 0.0;
@@ -49,24 +53,22 @@ float deltaI = 0;
 
 int pulsador = 16;            //pin utilizado para el pulsador de cambio de escala
 int input_zero = 14;          //pin utilizado para pulsador de puesta a cero la medicion
+int pulsador_disparo = 12;  //pin utilizado para pulsador selector de potencia de salida
+int pulsador_hold = 13;  //pin utilizado para pulsador selector de potencia de salida
 int pulsador_select = 188;    //pin utilizado para pulsador selector de potencia de salida
-int pulsador_hold = 13;       //pin utilizado para pulsador dedicado a congenlar la señal medida
 
 int output_hold = 200;   //pin de salida
 int output_led = 2;     //pin de salida led indicador
-int output_zumbador = 12; //pin de salida zumbador
-
-int output_pwm = 199;   //pin de salida pwm
-unsigned int ValorPwm=20;
-boolean band_potencia = false;
+int output_zumbador = 1; //pin de salida zumbador
+int output_disparo = 3; //pin de salida disparo
 
 
 unsigned long tiempo_actual = 0;
 unsigned long tiempo_LCD = 0;
 unsigned long tiempo_pulsadorZ = 0;  //pulsador de puesta a caro la medicion
 unsigned long tiempo_pulsadorE = 0;  //pulsador de selector de escala
-unsigned long tiempo_pulsadorS = 0;  //pulsador de selector de potencia
 unsigned long tiempo_pulsadorH = 0;  //pulsador de congelar medicion
+unsigned long tiempo_pulsadorD = 0;  //pulsador de selector de disparo
 
 ////////////////INCIALIZAR wifi /////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////    

@@ -12,7 +12,7 @@ float LeerDeltaI(int canal, int escala){
 
 
   ///*
-  Iteraciones = 25;ret=10;
+  Iteraciones = 10;ret=1;
 
   for (int i = 0; i < Iteraciones; i++) {
 
@@ -22,7 +22,7 @@ float LeerDeltaI(int canal, int escala){
       diferencia = ads.readADC_Differential_2_3();
     }
     data = diferencia + data;
-    delay(ret);
+    delay(ret);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
 
   }
 

@@ -19,7 +19,17 @@ void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
             if (strcmp((char*)payload, "SEV_C/SEV_I/Check/?") == 0) {
                 //lcd.print("Check I");
                 webSocket.sendTXT("SEV_I/SEV_C/Check/Ok");
-                delay(100);
+                delay(50);
+            }
+            if (strcmp((char*)payload, "SEV_C/SEV_I/Disparo/ON") == 0) {
+                bandDisparoWEB = true;
+                webSocket.sendTXT("SEV_I/SEV_C/Disparo/ON");
+                delay(50);
+            }
+            if (strcmp((char*)payload, "SEV_C/SEV_I/Disparo/OFF") == 0) {
+                bandDisparoWEB = false;
+                webSocket.sendTXT("SEV_I/SEV_C/Disparo/OFF");
+                delay(50);
             }
 			break;
 		case WStype_BIN:

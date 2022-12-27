@@ -34,3 +34,9 @@ Version 0.9 --> 23-09-2022
      * Reemplazamos HoldSet por Hold, ahora recibimos la orden de hold por el pulsador y la enviamos a la placa de tension
      * Cambiamos la velocidad de toma de datos de sensor ads1115, la dejamos en 490sps al igual que la placa de tension
      * La calibracion se encuentra desactivada
+
+Version 1.0 --> 27-12-2022
+    En esta version trabajamos en:
+     * Limpiamos el codigo
+     * Check la funcion de disparo
+     * La calibracion se encuentra desactivada

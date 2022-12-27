@@ -21,19 +21,20 @@ void setup(void)
   pinMode(pulsador_hold, INPUT_PULLUP);//Configuramos el pin como entrada pullup
   digitalWrite(pulsador_hold, HIGH);
 
+  pinMode(pulsador_disparo, INPUT_PULLUP);//Configuramos el pin como entrada pullup
+  digitalWrite(pulsador_disparo, HIGH);
+
   pinMode(output_led, OUTPUT);
   digitalWrite(output_led, LOW);
 
   pinMode(output_zumbador, OUTPUT);
   digitalWrite(output_zumbador, LOW);
+
+  pinMode(output_disparo, OUTPUT);
+  digitalWrite(output_disparo, LOW);
+  
   delay(10);
 
- 
-  //pinMode(output_pwm, OUTPUT);
-  //analogWrite(output_pwm, 0);//valores de 0 a 1023
-  //analogWriteFreq(50);
-
-  //Serial.begin(9600);
 
 //////////////////////CONFIGURACION DE ADS1115 ///////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,8 +51,7 @@ void setup(void)
   //ads.setGain(GAIN_EIGHT);constanteADS=0.015625;escala =8;      // 8x gain   +/- 0.512V  1 bit = 0.25mV   0.015625mV
   //ads.setGain(GAIN_SIXTEEN);constanteADS=0.0078125;escala =16;    // 16x gain  +/- 0.256V  1 bit = 0.125mV  0.0078125mV
 
-  ads.setDataRate(RATE_ADS1015_490SPS);
-  //ads.setDataRate(RATE_ADS1115_32SPS);
+  ads.setDataRate(RATE_ADS1115_8SPS);
   
   ads.begin();
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -86,7 +86,7 @@ void SaludoInicial(){
     lcd.setCursor(0, 0);
     lcd.print("***CDC Elctronics***");
     lcd.setCursor(0, 1);
-    lcd.print("*SEV-WS-I -> GIT-0.9");
+    lcd.print("*SEV-WS-I -> GIT-1.0");
     lcd.setCursor(0, 2);
     lcd.print("cel:+54-0387-5312963");
     lcd.setCursor(0, 3);

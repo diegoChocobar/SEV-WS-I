@@ -17,9 +17,7 @@
 #include <ZeroOffSet.h>
 #include <Hold.h>
 #include <PrintDeltaI.h>
-#include <SelectPotencia.h>
-
-///Este es proyecto subido a github 
+#include <Disparo.h>
 
 
 void loop(void)
@@ -28,9 +26,15 @@ void loop(void)
   tiempo_LCD = millis();
   tiempo_pulsadorZ = millis();
   tiempo_pulsadorE = millis();
-  tiempo_pulsadorS = millis();
   tiempo_pulsadorH = millis();
+  tiempo_pulsadorD = millis();
 
+  ////////Bloque para INICIALIZAR WebSockwt de forma CORRECTA////////////////////
+  while(webSocket.isConnected()==false){
+    webSocket.loop();
+    delay(10);
+  }
+  ///////////////////////////////////////////////////////////////////////////////
 
   while (1){
 
@@ -44,11 +48,19 @@ void loop(void)
 
     Hold();
 
-    //SelectPotencia();
+    Disparo();
 
     delay(10);
 
     webSocket.loop();
+
+
+  ////////Bloque para RE-INICIALIZAR WebSockwt en caso que se CAIGA////////////////////
+  while(webSocket.isConnected()==false){
+    webSocket.loop();
+    delay(10);
+  }
+  ///////////////////////////////////////////////////////////////////////////////
 
 
   }

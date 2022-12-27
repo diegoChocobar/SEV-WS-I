@@ -13,7 +13,7 @@ void Hold(void){
       if (bandHold == false) {//debemos congelar la señal actual
         bandHold = true;
         EnviarHold("ON");
-        delay(500);//este delay es para sincronizar el tiempo que tarda en recibir la orden hold la placa SEV_I
+        delay(100);//este delay es de antirrebote del pulsados
         digitalWrite(output_led, HIGH);
         digitalWrite(output_zumbador, HIGH);
 
@@ -35,7 +35,7 @@ void Hold(void){
 
         bandHold = false;
         EnviarHold("OFF");
-        delay(500);//este delay es para sincronizar el tiempo que tarda en recibir la orden hold la placa SEV_I
+        delay(100);//este delay es el antirrebote del pulsador
         digitalWrite(output_led, LOW);
         digitalWrite(output_zumbador, HIGH);
 
