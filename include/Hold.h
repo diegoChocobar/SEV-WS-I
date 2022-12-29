@@ -9,7 +9,8 @@ void Hold(void){
     tiempo_pulsadorH = tiempo_actual;
     
 
-    if(digitalRead(pulsador_hold) == 0){
+    if(digitalRead(pulsador_hold) == 0 || bandHoldWEB == true){
+      bandHoldWEB = false;
       if (bandHold == false) {//debemos congelar la señal actual
         bandHold = true;
         EnviarHold("ON");

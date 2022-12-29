@@ -41,6 +41,7 @@ boolean bandHold=false;
 boolean bandDisparo=true;
 boolean bandDisparoWEB=false;
 boolean bandDisparoWEBAnt=false;
+boolean bandHoldWEB=false;
 boolean señalhold = false;
 
 //float constanteRshunt = 1.0326;

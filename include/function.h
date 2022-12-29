@@ -31,6 +31,18 @@ void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
                 webSocket.sendTXT("SEV_I/SEV_C/Disparo/OFF");
                 delay(50);
             }
+            if (strcmp((char*)payload, "SEV_C/SEV_I/Hold/ON") == 0) {
+                bandHoldWEB = true;
+                bandHold = false;
+                webSocket.sendTXT("SEV_I/SEV_C/Hold/ON");
+                delay(50);
+            }
+            if (strcmp((char*)payload, "SEV_C/SEV_I/Hold/OFF") == 0) {
+                bandHoldWEB = true;
+                bandHold = true;
+                webSocket.sendTXT("SEV_I/SEV_C/Hold/OFF");
+                delay(50);
+            }
 			break;
 		case WStype_BIN:
 			//USE_SERIAL.printf("[WSc] get binary length: %u\n", length);
