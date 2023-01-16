@@ -29,6 +29,7 @@ float LeerDeltaI(int canal, int escala){
   if(canal == 1){
     tension = float( (data / Iteraciones) * constanteADS );
     tension = Calibrar(tension,escala);
+    tension = tension *constanteProteccion; //esto debido a que tenemos una placa de proteccion que tiene un divisor resistivo X2
     corriente = float( (tension / constanteRshunt) - offset_1);
     ///*
     if(corriente > 1 || corriente < -1){

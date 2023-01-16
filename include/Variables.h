@@ -46,7 +46,7 @@ boolean señalhold = false;
 
 //float constanteRshunt = 1.0326;
 float constanteRshunt = 1.00;
-
+float constanteProteccion = 1.00; ///constante que tiene la placa de proteccion
 float offset_1 = 0.0;
 float offset_2 = 0.0;
 
