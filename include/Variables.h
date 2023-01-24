@@ -10,6 +10,15 @@
 #include <avr/dtostrf.h>
 
 
+struct  Corrientes
+{
+    float promedio;
+    float desvio_standar;
+    float valor;
+    int tamaño;//tamño del numero de iteraciones para la obtencion de una medida
+    int n;//tamaño del valor que queda despues de tratar la señal
+};
+
 ////////////////VARIABLES PARA MANEJO DEL LCD //////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 o 0x20 o 0x3F
@@ -44,13 +53,14 @@ boolean bandDisparoWEBAnt=false;
 boolean bandHoldWEB=false;
 boolean señalhold = false;
 
-//float constanteRshunt = 1.0326;
 float constanteRshunt = 1.00;
 float constanteProteccion = 1.00; ///constante que tiene la placa de proteccion
-float offset_1 = 0.0;
-float offset_2 = 0.0;
+Corrientes offset_1 ={0,0,0,0};
+Corrientes offset_2={0,0,0,0};
+Corrientes deltaI;
 
-float deltaI = 0;
+
+int Iteraciones=50;
 
 int pulsador = 16;            //pin utilizado para el pulsador de cambio de escala
 int input_zero = 14;          //pin utilizado para pulsador de puesta a cero la medicion

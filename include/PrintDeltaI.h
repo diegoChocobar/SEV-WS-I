@@ -4,16 +4,23 @@ void PrintDeltaILCD(float x, int y);
 
 void PrintDeltaI(){
 
-  float deltaIf = 0; //corriente de fuga, nos sirve para activar o desactivar el sonido
+  Corrientes deltaIf; //corriente de fuga, nos sirve para activar o desactivar el sonido
+  Corrientes data_corriente = {0,0,0};//
 
   if(tiempo_actual > tiempo_LCD + 300){
       //pasaron 500ms
       tiempo_LCD = tiempo_actual;
 
       if(bandHold == false){
-        deltaI = LeerDeltaI(1,escala);//obtenemos deltaI calibrado
-        //EnviarDatos(deltaI);
-        PrintDeltaILCD(deltaI,escala);
+        data_corriente = LeerDeltaI(1,escala);//obtenemos deltaI calibrado
+        deltaI = data_corriente;
+        //EnviarDatos(deltaI,sizeof(deltaI)/sizeof(deltaI[0]));
+        //EnviarDatos1(data_corriente.valor,"VALOR");
+        //EnviarDatos1(data_corriente.promedio,"PROMEDIO");
+        //EnviarDatos1(data_corriente.desvio_standar,"DesvioStandar");
+        //EnviarDatos1(data_corriente.tamaño,"tamaño medidas");
+        //EnviarDatos2(data_corriente,"P,V,d,t,n");
+        PrintDeltaILCD(data_corriente.valor,escala);
       }else{
         //estamos en holld
         deltaIf = LeerDeltaI(1,escala);//obtenemos deltaI calibrado

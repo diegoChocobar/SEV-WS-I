@@ -1,25 +1,31 @@
 #include <Arduino.h>
 
-float LeerDeltaI(int canal, int escala){
+Corrientes calculo_corrientes(float x[], int length);
+
+
+Corrientes LeerDeltaI(int canal, int escala){
   
   float diferencia = 0.0;
-  float corriente = 0.0;
-  float tension = 0.0;
-
   float data = 0.0;
-  int Iteraciones;
+
+  Corrientes result;
+  float deltaI_señal[Iteraciones];
+  
   int ret;
 
-
   ///*
-  Iteraciones = 10;ret=1;
+  ret=1;
 
   for (int i = 0; i < Iteraciones; i++) {
 
     if(canal == 1){
       diferencia = ads.readADC_Differential_0_1();
+      deltaI_señal[i]= diferencia;
+      //dato[i]= diferencia;
     }else{
       diferencia = ads.readADC_Differential_2_3();
+      deltaI_señal[i]= diferencia;
+      //dato[i]= diferencia;
     }
     data = diferencia + data;
     delay(ret);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
@@ -27,34 +33,63 @@ float LeerDeltaI(int canal, int escala){
   }
 
   if(canal == 1){
-    tension = float( (data / Iteraciones) * constanteADS );
-    tension = Calibrar(tension,escala);
-    tension = tension *constanteProteccion; //esto debido a que tenemos una placa de proteccion que tiene un divisor resistivo X2
-    corriente = float( (tension / constanteRshunt) - offset_1);
-    ///*
-    if(corriente > 1 || corriente < -1){
-      digitalWrite(output_zumbador, HIGH);
-    }else{
-      digitalWrite(output_zumbador, LOW);
-    }
-    //*/
-  }else{
-    tension = float((data / Iteraciones) * constanteADS);
-    tension = Calibrar(tension,escala);
-    corriente = float( (tension / constanteRshunt) - offset_2);
-    ///*
-    if(corriente > 1 || corriente < -1){
-      digitalWrite(output_zumbador, HIGH);
-    }else{
-      digitalWrite(output_zumbador, LOW);
-    }
-    //*/
+    result = calculo_corrientes(deltaI_señal,Iteraciones);
+    result.valor = result.valor - offset_1.valor;
+    //result.promedio = Corriente2(data,Iteraciones);
   }
-  
-  /*///////////////////////////////////////////////////////////
-      El tiempo que demoramos en tomar la lectura es:
-      tiempo = (Iteraciones)*(4+ret)  [=] mili segundos
-  */////////////////////////////////////////////////////////
 
-  return corriente;
+
+  return result;
+}
+
+Corrientes calculo_corrientes(float x[], int length){
+
+  float corriente[length];
+  float tension[length];
+  float sumatoria=0;
+  //float result=0;
+  Corrientes result;
+  result.valor=0;
+  result.promedio=0;
+  result.desvio_standar=0;
+
+  int n=0;
+  float valor=0;
+
+//////////////Calculo de valor promerio //////////////////////////////
+    for (int i = 0; i < length; i++) {
+      tension[i] = float( (x[i] ) * constanteADS );
+      //tension[i] = Calibrar(tension,escala);
+      corriente[i] = float(tension[i] / constanteRshunt) ;
+      //corriente[i] = corriente[i] *constanteProteccion; //esto debido a que tenemos una placa de proteccion que tiene un divisor resistivo X2
+      result.promedio = result.promedio + corriente[i];
+    }
+    result.promedio = result.promedio / length;
+    result.tamaño = length;
+/////////////////////////////////////////////////////////////////////////
+
+///////////////calculo de desvio standard//////////////////    
+    for (int i = 0; i < length; i++) {
+        sumatoria = sumatoria + (corriente[i]-result.promedio)*(corriente[i]-result.promedio);
+    }
+    result.desvio_standar = sqrt(sumatoria/length);
+////////////////////////////////////////////////////////////
+
+//////////////Calculo del valor final ////////////////////////////
+    for (int i = 0; i < length; i++) {
+      
+      corriente[i] = sqrt(corriente[i]*corriente[i]);
+      if(corriente[i]<=result.promedio+2*(result.desvio_standar))
+      {
+        n = n+1;
+        valor = valor + corriente[i];
+      }
+      
+    }
+    result.n = n;
+    result.valor = float(valor/n);
+///////////////////////////////////////////////////////////////////
+
+
+    return result;
 }

@@ -23,7 +23,7 @@ void Hold(void){
         /////////////////////////////////////////////////////// 
         /////enviamos datos al software///////////////////////
         
-        EnviarDatos(deltaI);
+        EnviarCorriente(deltaI.valor);
         /////////////////////////////////////////////////////
         
         while(digitalRead(pulsador_hold) == 0){delay(10);} //mientras tenememos presionado el pulsador de zero off set
