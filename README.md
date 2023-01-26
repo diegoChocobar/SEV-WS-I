@@ -45,4 +45,6 @@ Version 2.0 --> 23-01-2023
     En esta version trabajamos en:
      * Crear codigo para que la señal de corriente sea tratada con array y mejoramos asi el calculo
      * Todas las funciones fueron adaptadas para que funcionen.
+     * Agregamos un panel de visualizacion para la calibracion.
+     * Resistencia de Shunto no agregada
      * La calibracion se encuentra desactivada

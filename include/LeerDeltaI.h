@@ -6,36 +6,38 @@ Corrientes calculo_corrientes(float x[], int length);
 Corrientes LeerDeltaI(int canal, int escala){
   
   float diferencia = 0.0;
-  float data = 0.0;
 
   Corrientes result;
   float deltaI_señal[Iteraciones];
   
-  int ret;
+  int ret=1;
 
   ///*
-  ret=1;
 
   for (int i = 0; i < Iteraciones; i++) {
 
     if(canal == 1){
       diferencia = ads.readADC_Differential_0_1();
       deltaI_señal[i]= diferencia;
-      //dato[i]= diferencia;
     }else{
       diferencia = ads.readADC_Differential_2_3();
       deltaI_señal[i]= diferencia;
-      //dato[i]= diferencia;
     }
-    data = diferencia + data;
     delay(ret);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
 
   }
 
   if(canal == 1){
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result = calculo_corrientes(deltaI_señal,Iteraciones);
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.valor = result.valor - offset_1.valor;
-    //result.promedio = Corriente2(data,Iteraciones);
+  }
+
+  if(result.valor > 1 || result.valor < -1){
+    digitalWrite(output_zumbador, HIGH);
+  }else{
+    digitalWrite(output_zumbador, LOW);
   }
 
 
@@ -64,6 +66,7 @@ Corrientes calculo_corrientes(float x[], int length){
       //corriente[i] = corriente[i] *constanteProteccion; //esto debido a que tenemos una placa de proteccion que tiene un divisor resistivo X2
       result.promedio = result.promedio + corriente[i];
     }
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.promedio = result.promedio / length;
     result.tamaño = length;
 /////////////////////////////////////////////////////////////////////////
@@ -72,6 +75,7 @@ Corrientes calculo_corrientes(float x[], int length){
     for (int i = 0; i < length; i++) {
         sumatoria = sumatoria + (corriente[i]-result.promedio)*(corriente[i]-result.promedio);
     }
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.desvio_standar = sqrt(sumatoria/length);
 ////////////////////////////////////////////////////////////
 
@@ -79,13 +83,14 @@ Corrientes calculo_corrientes(float x[], int length){
     for (int i = 0; i < length; i++) {
       
       corriente[i] = sqrt(corriente[i]*corriente[i]);
-      if(corriente[i]<=result.promedio+2*(result.desvio_standar))
+      if(corriente[i]<=sqrt(result.promedio*result.promedio)+2*(result.desvio_standar))
       {
         n = n+1;
         valor = valor + corriente[i];
       }
       
     }
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.n = n;
     result.valor = float(valor/n);
 ///////////////////////////////////////////////////////////////////

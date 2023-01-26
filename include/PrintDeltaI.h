@@ -1,26 +1,31 @@
 #include <Arduino.h>
 
+void PrintDeltaVLCD_Calibracion(Corrientes x, int y);
 void PrintDeltaILCD(float x, int y);
 
 void PrintDeltaI(){
 
   Corrientes deltaIf; //corriente de fuga, nos sirve para activar o desactivar el sonido
-  Corrientes data_corriente = {0,0,0};//
+  Corrientes data_corriente = {0,0,0,0,0,0,0};//
 
   if(tiempo_actual > tiempo_LCD + 300){
       //pasaron 500ms
       tiempo_LCD = tiempo_actual;
 
       if(bandHold == false){
+        tiempo_medida_total = millis();
         data_corriente = LeerDeltaI(1,escala);//obtenemos deltaI calibrado
         deltaI = data_corriente;
+        tiempo_medida_total = millis() - tiempo_medida_total;
+        deltaI.tiempo_total = tiempo_medida_total;
         //EnviarDatos(deltaI,sizeof(deltaI)/sizeof(deltaI[0]));
         //EnviarDatos1(data_corriente.valor,"VALOR");
         //EnviarDatos1(data_corriente.promedio,"PROMEDIO");
         //EnviarDatos1(data_corriente.desvio_standar,"DesvioStandar");
         //EnviarDatos1(data_corriente.tamaño,"tamaño medidas");
         //EnviarDatos2(data_corriente,"P,V,d,t,n");
-        PrintDeltaILCD(data_corriente.valor,escala);
+        //PrintDeltaILCD(data_corriente.valor,escala);
+        PrintDeltaVLCD_Calibracion(deltaI,escala);//visualizacion de calibracion
       }else{
         //estamos en holld
         deltaIf = LeerDeltaI(1,escala);//obtenemos deltaI calibrado
@@ -32,6 +37,31 @@ void PrintDeltaI(){
     }
   }
 
+}
+
+void PrintDeltaVLCD_Calibracion(Corrientes x, int y){
+
+  boolean negativo = false;
+  if(x.valor < 0){
+    x.valor = x.valor * -1;
+    negativo = true;
+  }
+
+  lcd.home();lcd.clear();
+  lcd.setCursor(0, 0);
+  if(negativo == true){lcd.print("CORRIENTE  A-B  (-)");}else{lcd.print("CORRIENTE  A-B  (+)");}
+  if(y == 2) {lcd.setCursor(0, 3);lcd.print("*2000mA*");}
+  if(y == 4) {lcd.setCursor(0, 3);lcd.print("*1000mA*");}
+  if(y == 16){lcd.setCursor(0, 3);lcd.print("*250mA**");}
+
+  lcd.setCursor(0, 1);lcd.print("V:");lcd.print(x.valor,3);
+  lcd.setCursor(8, 1);lcd.print("d:");lcd.print(x.desvio_standar,3);
+  lcd.setCursor(16, 1);lcd.print("n");lcd.print(x.n,0);
+
+  lcd.setCursor(0, 2);lcd.print("P:");lcd.print(x.promedio,3);
+  lcd.setCursor(16, 2);lcd.print("t");lcd.print(x.tamaño,0);
+
+  lcd.setCursor(8, 3);lcd.print("Time:");lcd.print(x.tiempo_total,0);
 }
 
 

@@ -17,6 +17,8 @@ struct  Corrientes
     float valor;
     int tamaño;//tamño del numero de iteraciones para la obtencion de una medida
     int n;//tamaño del valor que queda despues de tratar la señal
+    float tiempo_individual;
+    float tiempo_total;
 };
 
 ////////////////VARIABLES PARA MANEJO DEL LCD //////////////////////////////////
@@ -55,8 +57,8 @@ boolean señalhold = false;
 
 float constanteRshunt = 1.00;
 float constanteProteccion = 1.00; ///constante que tiene la placa de proteccion
-Corrientes offset_1 ={0,0,0,0};
-Corrientes offset_2={0,0,0,0};
+Corrientes offset_1 ={0,0,0,0,0,0,0};
+Corrientes offset_2 ={0,0,0,0,0,0,0};
 Corrientes deltaI;
 
 
@@ -81,6 +83,8 @@ unsigned long tiempo_pulsadorE = 0;  //pulsador de selector de escala
 unsigned long tiempo_pulsadorH = 0;  //pulsador de congelar medicion
 unsigned long tiempo_pulsadorD = 0;  //pulsador de selector de disparo
 
+unsigned long tiempo_medida_total = 0;  //pulsador para congelar la señal
+unsigned long tiempo_medida_indiv = 0;  //pulsador para congelar la señal
 ////////////////INCIALIZAR wifi /////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////    
 const char* ssid = "SEV_WiFi";
