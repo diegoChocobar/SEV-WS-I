@@ -23,7 +23,7 @@ struct  Corrientes
 
 ////////////////VARIABLES PARA MANEJO DEL LCD //////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 o 0x20 o 0x3F
+LiquidCrystal_I2C lcd(0x3F,20,4);  // set the LCD address to 0x27 o 0x20 o 0x3F
 
 const int pos1_unidad=17,pos1_decena=12,pos1_centena=8,pos1_mil=4,pos1_diezmil=0;
 const int pos2_unidad=17,pos2_decena=13,pos2_centena=8,pos2_mil=4,pos2_diezmil=0;
@@ -55,7 +55,7 @@ boolean bandDisparoWEBAnt=false;
 boolean bandHoldWEB=false;
 boolean señalhold = false;
 
-float constanteRshunt = 1.00;
+float constanteRshunt = 0.9884;
 float constanteProteccion = 1.00; ///constante que tiene la placa de proteccion
 Corrientes offset_1 ={0,0,0,0,0,0,0};
 Corrientes offset_2 ={0,0,0,0,0,0,0};

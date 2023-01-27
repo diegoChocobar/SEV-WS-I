@@ -54,8 +54,8 @@ void PrintDeltaVLCD_Calibracion(Corrientes x, int y){
   if(y == 4) {lcd.setCursor(0, 3);lcd.print("*1000mA*");}
   if(y == 16){lcd.setCursor(0, 3);lcd.print("*250mA**");}
 
-  lcd.setCursor(0, 1);lcd.print("V:");lcd.print(x.valor,3);
-  lcd.setCursor(8, 1);lcd.print("d:");lcd.print(x.desvio_standar,3);
+  lcd.setCursor(0, 1);lcd.print("V");lcd.print(x.valor,3);
+  lcd.setCursor(9, 1);lcd.print("d");lcd.print(x.desvio_standar,3);
   lcd.setCursor(16, 1);lcd.print("n");lcd.print(x.n,0);
 
   lcd.setCursor(0, 2);lcd.print("P:");lcd.print(x.promedio,3);
