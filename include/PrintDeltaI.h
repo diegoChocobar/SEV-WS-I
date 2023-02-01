@@ -24,8 +24,8 @@ void PrintDeltaI(){
         //EnviarDatos1(data_corriente.desvio_standar,"DesvioStandar");
         //EnviarDatos1(data_corriente.tamaño,"tamaño medidas");
         //EnviarDatos2(data_corriente,"P,V,d,t,n");
-        //PrintDeltaILCD(data_corriente.valor,escala);
-        PrintDeltaVLCD_Calibracion(deltaI,escala);//visualizacion de calibracion
+        PrintDeltaILCD(deltaI.valor,escala);
+        //PrintDeltaVLCD_Calibracion(deltaI,escala);//visualizacion de calibracion
       }else{
         //estamos en holld
         deltaIf = LeerDeltaI(1,escala);//obtenemos deltaI calibrado
@@ -58,7 +58,7 @@ void PrintDeltaVLCD_Calibracion(Corrientes x, int y){
   lcd.setCursor(9, 1);lcd.print("d");lcd.print(x.desvio_standar,3);
   lcd.setCursor(16, 1);lcd.print("n");lcd.print(x.n,0);
 
-  lcd.setCursor(0, 2);lcd.print("P:");lcd.print(x.promedio,3);
+  lcd.setCursor(0, 2);lcd.print("P");lcd.print(x.promedio,3);
   lcd.setCursor(16, 2);lcd.print("t");lcd.print(x.tamaño,0);
 
   lcd.setCursor(8, 3);lcd.print("Time:");lcd.print(x.tiempo_total,0);

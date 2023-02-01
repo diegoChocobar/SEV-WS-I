@@ -55,7 +55,7 @@ boolean bandDisparoWEBAnt=false;
 boolean bandHoldWEB=false;
 boolean señalhold = false;
 
-float constanteRshunt = 0.9884;
+float constanteRshunt = 0.9891;
 float constanteProteccion = 1.00; ///constante que tiene la placa de proteccion
 Corrientes offset_1 ={0,0,0,0,0,0,0};
 Corrientes offset_2 ={0,0,0,0,0,0,0};

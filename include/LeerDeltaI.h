@@ -30,6 +30,7 @@ Corrientes LeerDeltaI(int canal, int escala){
   if(canal == 1){
     delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result = calculo_corrientes(deltaI_señal,Iteraciones);
+    result.valor = Calibrar(result.valor,escala);//aqui se incluye el valor del divisor resistivo
     delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.valor = result.valor - offset_1.valor;
   }
