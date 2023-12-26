@@ -50,9 +50,9 @@ void PrintDeltaVLCD_Calibracion(Corrientes x, int y){
   lcd.home();lcd.clear();
   lcd.setCursor(0, 0);
   if(negativo == true){lcd.print("CORRIENTE  A-B  (-)");}else{lcd.print("CORRIENTE  A-B  (+)");}
-  if(y == 2) {lcd.setCursor(0, 3);lcd.print("*2000mA*");}
-  if(y == 4) {lcd.setCursor(0, 3);lcd.print("*1000mA*");}
-  if(y == 16){lcd.setCursor(0, 3);lcd.print("*250mA**");}
+  if(y == 2) {lcd.setCursor(0, 3);lcd.print("*4000mA*");}
+  if(y == 4) {lcd.setCursor(0, 3);lcd.print("*2000mA*");}
+  if(y == 16){lcd.setCursor(0, 3);lcd.print("*500mA**");}
 
   lcd.setCursor(0, 1);lcd.print("V");lcd.print(x.valor,3);
   lcd.setCursor(9, 1);lcd.print("d");lcd.print(x.desvio_standar,3);
@@ -77,7 +77,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
   }
 
   if(y == 2){//tension maxima a medir son +/- 2.048V con resolucion de 0.0625mV
-    if(x<=2000){
+    if(x<=4000){
       //debemos mostrar 4 numero con un punto decimal
       float xx = 0.0; //numero a redondear
       x = x*10.0;
@@ -94,7 +94,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.setCursor(0, 0);
       if(negativo == true){lcd.print("CORRIENTE  A->B  (-)");}else{lcd.print("CORRIENTE  A->B  (+)");}
       lcd.setCursor(0, 3);
-      lcd.print("***Escala: 2000mA***");
+      lcd.print("***Escala: 4000mA***");
       mostranumero(pos1_unidad,unidad);
       mostranumero(pos1_decena,decena);
       if(diezmil==0 && mil==0 && centena==0){}else{mostranumero(pos1_centena,centena);}
@@ -109,7 +109,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.setCursor(0, 0);
       lcd.print("***CORRIENTE  A-B***");
       lcd.setCursor(0, 3);
-      lcd.print("***Escala: 2000mA***");
+      lcd.print("***Escala: 4000mA***");
       mostranumero(pos1_unidad,8);
       mostranumero(pos1_decena,8);
       mostranumero(pos1_centena,8);
@@ -122,7 +122,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
   }
 
   if(y == 4){//tension maxima a medir son +/- 1.024V con resolucion de 0.03125mV
-    if(x<=1000){
+    if(x<=2000){
       //debemos mostrar 4 numero con un punto decimal
       x = x*100.0;
       diezmil = x/10000;
@@ -136,7 +136,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.setCursor(0, 0);
       if(negativo == true){lcd.print("CORRIENTE  A->B  (-)");}else{lcd.print("CORRIENTE  A->B  (+)");}
       lcd.setCursor(0, 3);
-      lcd.print("***Escala: 1000mA***");
+      lcd.print("***Escala: 2000mA***");
       mostranumero(pos2_unidad,unidad);
       mostranumero(pos2_decena,decena);
       mostranumero(pos2_centena,centena);
@@ -151,7 +151,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.setCursor(0, 0);
       lcd.print("***CORRIENTE  A-B***");
       lcd.setCursor(0, 3);
-      lcd.print("***Escala: 1000mA***");
+      lcd.print("***Escala: 2000mA***");
       mostranumero(pos2_unidad,8);
       mostranumero(pos2_decena,8);
       mostranumero(pos2_centena,8);
@@ -163,7 +163,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
   }
 
   if(y == 16){//tension maxima a medir son +/- 0.256V con resolucion de 0.0078125mV
-    if(x<=250){
+    if(x<=500){
       //debemos mostrar 4 numero con un punto decimal
       x = x*100.0;
       diezmil = x/10000;
@@ -177,7 +177,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.setCursor(0, 0);
       if(negativo == true){lcd.print("CORRIENTE  A->B  (-)");}else{lcd.print("CORRIENTE  A->B  (+)");}
       lcd.setCursor(0, 3);
-      lcd.print("***Escala: 250mA***");
+      lcd.print("***Escala: 500mA***");
       mostranumero(pos2_unidad,unidad);
       mostranumero(pos2_decena,decena);
       mostranumero(pos2_centena,centena);
@@ -192,7 +192,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.setCursor(0, 0);
       lcd.print("***CORRIENTE A-B***");
       lcd.setCursor(0, 3);
-      lcd.print("***Escala: 250mA***");
+      lcd.print("***Escala: 500mA***");
       mostranumero(pos2_unidad,8);
       mostranumero(pos2_decena,8);
       mostranumero(pos2_centena,8);

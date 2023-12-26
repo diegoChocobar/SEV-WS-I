@@ -53,3 +53,8 @@ Version 2.1 --> 23-01-2023
     Esta es la version que contiene el equipo de Aguas de Catamarca:
     * Se agrego Resistencia de Shunt y circuito de proteccion contra sobre corriente
     * Se agrego la calibracion de equipo.
+
+Version 2.2 --> 26-12-2023
+    Esta es la version que contiene el equipo de Aguas de Catamarca:
+    * Se cambio el valor de las escalas, ahora podemos medir hasta 5000ma
+    * Se agrego la calibracion de equipo, teniendo en cuenta la nueva placa de acondicionamiento de señal de I
