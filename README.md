@@ -58,3 +58,9 @@ Version 2.2 --> 26-12-2023
     Esta es la version que contiene el equipo de Aguas de Catamarca:
     * Se cambio el valor de las escalas, ahora podemos medir hasta 5000ma
     * Se agrego la calibracion de equipo, teniendo en cuenta la nueva placa de acondicionamiento de señal de I
+
+Version 2.3 --> 26-12-2023
+    Esta es la version que contiene el equipo de Aguas de Catamarca:
+    * Se cambio el valor de las escalas, ahora podemos medir hasta 50000ma
+    * Se adapto la visualizacion en LCD para soportar las corriente maximas de cada escala
+    * Se desactivo calibracion.

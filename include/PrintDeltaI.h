@@ -24,8 +24,8 @@ void PrintDeltaI(){
         //EnviarDatos1(data_corriente.desvio_standar,"DesvioStandar");
         //EnviarDatos1(data_corriente.tamaño,"tamaño medidas");
         //EnviarDatos2(data_corriente,"P,V,d,t,n");
-        PrintDeltaILCD(deltaI.valor,escala);
-        //PrintDeltaVLCD_Calibracion(deltaI,escala);//visualizacion de calibracion
+        //PrintDeltaILCD(deltaI.valor,escala);
+        PrintDeltaVLCD_Calibracion(deltaI,escala);//visualizacion de calibracion
       }else{
         //estamos en holld
         deltaIf = LeerDeltaI(1,escala);//obtenemos deltaI calibrado
@@ -124,7 +124,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
   if(y == 4){//tension maxima a medir son +/- 1.024V con resolucion de 0.03125mV
     if(x<=2000){
       //debemos mostrar 4 numero con un punto decimal
-      x = x*100.0;
+      x = x*10.0;
       diezmil = x/10000;
       mil = (x - diezmil*10000) / 1000;
       centena =(x - diezmil*10000 - mil*1000) / 100;
@@ -137,12 +137,14 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       if(negativo == true){lcd.print("CORRIENTE  A->B  (-)");}else{lcd.print("CORRIENTE  A->B  (+)");}
       lcd.setCursor(0, 3);
       lcd.print("***Escala: 2000mA***");
-      mostranumero(pos2_unidad,unidad);
-      mostranumero(pos2_decena,decena);
-      mostranumero(pos2_centena,centena);
-      if(diezmil==0 && mil==0){}else{mostranumero(pos2_mil,mil);}
-      if(diezmil != 0){mostranumero(pos2_diezmil,diezmil);}
-      lcd.setCursor(11,2);
+      mostranumero(pos1_unidad,unidad);
+      mostranumero(pos1_decena,decena);
+      mostranumero(pos1_unidad,unidad);
+      mostranumero(pos1_decena,decena);
+      if(diezmil==0 && mil==0 && centena==0){}else{mostranumero(pos1_centena,centena);}
+      if(diezmil==0 && mil==0){}else{mostranumero(pos1_mil,mil);}
+      if(diezmil!=0){mostranumero(pos1_diezmil,diezmil);} 
+      lcd.setCursor(15,2);
       lcd.print("*");
     }
     else{
@@ -152,19 +154,19 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.print("***CORRIENTE  A-B***");
       lcd.setCursor(0, 3);
       lcd.print("***Escala: 2000mA***");
-      mostranumero(pos2_unidad,8);
-      mostranumero(pos2_decena,8);
-      mostranumero(pos2_centena,8);
-      mostranumero(pos2_mil,8);
-      mostranumero(pos2_diezmil,8);
-      lcd.setCursor(11,2);
+      mostranumero(pos1_unidad,8);
+      mostranumero(pos1_decena,8);
+      mostranumero(pos1_centena,8);
+      mostranumero(pos1_mil,8);
+      mostranumero(pos1_diezmil,8);
+      lcd.setCursor(15,2);
       lcd.print("*");
     }
   }
 
   if(y == 16){//tension maxima a medir son +/- 0.256V con resolucion de 0.0078125mV
     if(x<=500){
-      //debemos mostrar 4 numero con un punto decimal
+      //debemos mostrar 3 numero con dos punto decimal
       x = x*100.0;
       diezmil = x/10000;
       mil = (x - diezmil*10000) / 1000;
