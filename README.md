@@ -64,3 +64,7 @@ Version 2.3 --> 26-12-2023
     * Se cambio el valor de las escalas, ahora podemos medir hasta 50000ma
     * Se adapto la visualizacion en LCD para soportar las corriente maximas de cada escala
     * Se desactivo calibracion.
+    
+Version 2.4 --> 29-12-2023
+    Esta es la version que contiene el equipo de Aguas de Catamarca:
+    * Se cambio logica de lectura para que me discrine las medidas negativas.

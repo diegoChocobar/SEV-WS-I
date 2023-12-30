@@ -94,6 +94,10 @@ Corrientes calculo_corrientes(float x[], int length){
     delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.n = n;
     result.valor = float(valor/n);
+    
+    if(result.promedio < 0){
+      result.valor = result.valor * -1;//conservamos el signo de la lectura
+    }
 ///////////////////////////////////////////////////////////////////
 
 
