@@ -68,3 +68,7 @@ Version 2.3 --> 26-12-2023
 Version 2.4 --> 29-12-2023
     Esta es la version que contiene el equipo de Aguas de Catamarca:
     * Se cambio logica de lectura para que me discrine las medidas negativas.
+
+Version 2.5 --> 29-12-2023
+    Esta es la version que contiene el equipo de Aguas de Catamarca:
+    * Se coloco la calibración correspondiente.
