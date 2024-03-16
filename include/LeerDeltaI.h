@@ -58,6 +58,10 @@ Corrientes calculo_corrientes(float x[], int length){
 
   int n=0;
   float valor=0;
+  int h = 1; ///variable de alejamiento del desvio standar
+  float Li=0;///limite inferior de h desvio standar
+  float Ls=0;///limite superior de h desvio standar
+  float Rango=0;
 
 //////////////Calculo de valor promerio //////////////////////////////
     for (int i = 0; i < length; i++) {
@@ -80,24 +84,28 @@ Corrientes calculo_corrientes(float x[], int length){
     result.desvio_standar = sqrt(sumatoria/length);
 ////////////////////////////////////////////////////////////
 
+//////////////calculos adicionales///////////////////////////////
+    Li = result.promedio - h * result.desvio_standar; //limite inferior de h desvio standar
+    Ls = result.promedio + h * result.desvio_standar; // limite superior de h desvio standar
+/////////////////////////////////////////////////////////////////
+
 //////////////Calculo del valor final ////////////////////////////
     for (int i = 0; i < length; i++) {
       
-      corriente[i] = sqrt(corriente[i]*corriente[i]);
-      if(corriente[i]<=sqrt(result.promedio*result.promedio)+2*(result.desvio_standar))
-      {
+      if(corriente[i]<Li || corriente[i]>Ls){
+        //estamos fuera del rango para tomar como buena una medicion
+      }
+      else{
         n = n+1;
         valor = valor + corriente[i];
       }
       
     }
+    
     delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.n = n;
     result.valor = float(valor/n);
     
-    if(result.promedio < 0){
-      result.valor = result.valor * -1;//conservamos el signo de la lectura
-    }
 ///////////////////////////////////////////////////////////////////
 
 

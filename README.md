@@ -68,3 +68,7 @@ Version 2.3 --> 26-12-2023
 Version 2.4 --> 29-12-2023
     Esta es la version que contiene el equipo de Aguas de Catamarca:
     * Se cambio logica de lectura para que me discrine las medidas negativas.
+
+Version 2.5 stable --> 16-03-2024
+    Esta es una version stable 
+    *Se mejoro el CALCULO DEL VALOR MEDIDO teniendo en cuenta desvio standar con Limite inferior y Limite superior
