@@ -9,59 +9,22 @@ float Calibrar(float x, int y){//x:tension y:escala
     x = x * -1;
     negativo = true;
   }
-  if(x<=0.1){//Limite inferior para la lectura de corriente
+  if(x<=0.5){//Limite inferior para la lectura de corriente
     resultado = 0.00;
   }
 
-  if(y == 2){//tension maxima a medir son +/- 2.048V con resolucion de 0.0625mV
+  if(y == 0){//tension maxima a medir son +/- 2.048V con resolucion de 0.0625mV
    ///*
-    if(x>0.1 && x<=2.5){
-      resultado = (x*1.00)-0.000;
-    }
-    if(x>2.5 && x<=12.5){
-      resultado = (x*1.00)-0.000;
-    }
-    if(x>12.5 && x<=125.0){
-      resultado = (x*1.00)-0.000;
-    }
-    if(x>125.0 && x<=500.0){
-      resultado = (x*1.00)-0.000;
-    }
-    if(x>500.0){
-      resultado = (x*1.00)-0.000;
-    }
     //*/
   }
 
-  if(y == 4){//tension maxima a medir son +/- 1.024V con resolucion de 0.03125mV
+  if(y == 2){//tension maxima a medir son +/- 2.048V con resolucion de 0.0625mV
     ///*
-    if(x>0.1 && x<=2.5){
-      resultado = (x*1.00)-0.000;
-    }
-    if(x>2.5 && x<=12.5){
-      resultado = (x*1.00)-0.000;
-    }
-    if(x>12.5 && x<=125.0){
-      resultado = (x*1.00)-0.000;
-    }
-    if(x>125.0){
-      resultado = (x*1.00)-0.000;
-    }
     //*/
   }
 
   if(y == 16){//tension maxima a medir son +/- 0.256V con resolucion de 0.0078125mV
     ///*
-    if(x>0.1 && x<=2.5){
-      resultado = (x*1.00)-0.000;
-    }
-    if(x>2.5 && x<=12.5){
-      resultado = (x*1.00)-0.000;
-    }
-
-    if(x>12.5){
-      resultado = (x*1.00)-0.000;
-    }
     //*/
   }
 

@@ -18,30 +18,30 @@ void SelectEscala(void){
       
 
         switch (escala) {
-          case 2:
+          case 0:
             ads.setGain(GAIN_SIXTEEN);constanteADS=0.0078125;escala =16;
             //Serial.println("Escala 250mV");
             lcd.setCursor(0, 3);
-            lcd.print("***Escala: 500mA***");
+            lcd.print("***Escala: 100mA***");
           break;
-          case 4:
-            ads.setGain(GAIN_TWO);constanteADS=0.0625;escala =2;
-            //Serial.println("Escala 2000mV");
+          case 2:
+            ads.setGain(GAIN_TWOTHIRDS);constanteADS=0.1875;escala =0;
+            //Serial.println("Escala 6000mV");
             lcd.setCursor(0, 3);
-            lcd.print("***Escala: 4000mA***");
+            lcd.print("***Escala: 2500mA***");
           break;
           case 16:
-            ads.setGain(GAIN_FOUR);constanteADS=0.03125;escala =4;
-            //Serial.println("Escala 1000mV");
+            ads.setGain(GAIN_TWO);constanteADS=0.0625;escala =2; 
+            //Serial.println("Escala 2000mV");
             lcd.setCursor(0, 3);
-            lcd.print("***Escala: 2000mA***");
+            lcd.print("***Escala: 1000mA***");
           break;
 
           default:
-            ads.setGain(GAIN_TWO);constanteADS=0.0625;escala =2;
-            //Serial.println("Escala 2000mV");
+            ads.setGain(GAIN_TWOTHIRDS);constanteADS=0.1875;escala =0;
+            //Serial.println("Escala 6000mV");
             lcd.setCursor(0, 3);
-            lcd.print("***Escala: 4000mA***");
+            lcd.print("***Escala: 2500mA***");
           break;
         }
       

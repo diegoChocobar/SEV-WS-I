@@ -72,3 +72,7 @@ Version 2.4 --> 29-12-2023
 Version 2.5 stable --> 16-03-2024
     Esta es una version stable 
     *Se mejoro el CALCULO DEL VALOR MEDIDO teniendo en cuenta desvio standar con Limite inferior y Limite superior
+
+Version 2.6 NewEscalas --> 04-04-2024
+    Esta es una version stable 
+    * En esta version se modificaron las escalas con las que trabajamos para la toma de datos
