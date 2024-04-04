@@ -76,3 +76,7 @@ Version 2.5 stable --> 16-03-2024
 Version 2.6 NewScales --> 04-04-2024
     Esta es una version stable 
     * En esta version se modificaron las escalas con las que trabajamos para la toma de datos
+
+Version 2.61 Equipo Serie S001 --> 04-04-2024
+    Esta es una version stable 
+    * En esta version contiene las calibraciones pertinentes y, se activo la visualizacion en modo comun.
