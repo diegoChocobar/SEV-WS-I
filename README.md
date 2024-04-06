@@ -76,3 +76,4 @@ Version 2.5 stable --> 16-03-2024
 Version 2.6 NewScales --> 04-04-2024
     Esta es una version stable 
     * En esta version se modificaron las escalas con las que trabajamos para la toma de datos
+    * Mejoramos la muestra del cero
