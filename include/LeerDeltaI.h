@@ -39,9 +39,11 @@ Corrientes LeerDeltaI(int canal, int escala){
     digitalWrite(output_zumbador, HIGH);
   }else{
     digitalWrite(output_zumbador, LOW);
+    /* Habilitar una vez calibrado
     if(result.valor < 1 & result.valor > -1){//por debajo de este valor mostramos cero, para evitar oscilaciones pequeñas
       result.valor = 0;
     }
+    */
   }
 
 

@@ -62,7 +62,7 @@ Corrientes offset_2 ={0,0,0,0,0,0,0};
 Corrientes deltaI;
 
 
-int Iteraciones=50;
+int Iteraciones=40;
 
 int pulsador = 16;            //pin utilizado para el pulsador de cambio de escala
 int input_zero = 14;          //pin utilizado para pulsador de puesta a cero la medicion

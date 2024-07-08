@@ -77,3 +77,7 @@ Version 2.6 NewScales --> 04-04-2024
     Esta es una version stable 
     * En esta version se modificaron las escalas con las que trabajamos para la toma de datos
     * Mejoramos la muestra del cero
+
+Version 2.7 --> 08/07/2024
+    En esta version trabajamos 
+    * Mejora de la comunicacion websocket
