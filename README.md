@@ -81,3 +81,7 @@ Version 2.6 NewScales --> 04-04-2024
 Version 2.7 --> 08/07/2024
     En esta version trabajamos 
     * Mejora de la comunicacion websocket
+Version 2.71 Calibracion Sergio Iramain --> 08/07/2024
+    En esta version trabajamos 
+    * Visulaisamos digitos grandes
+    * Agregamos Calibracion
