@@ -82,3 +82,7 @@ Version 2.7 --> 08/07/2024
     En esta version trabajamos 
     * Mejora de la comunicacion websocket
     * Mejora de visualizacion en pantalla de calibracion, se visualiza las escalas en mv
+
+Version 2.7v --> 08/07/2024
+    En esta version trabajamos 
+    * Adaptar las entradas para que sea funcional con el hardware.

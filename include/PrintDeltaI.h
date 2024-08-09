@@ -24,8 +24,8 @@ void PrintDeltaI(){
         //EnviarDatos1(data_corriente.desvio_standar,"DesvioStandar");
         //EnviarDatos1(data_corriente.tamaño,"tamaño medidas");
         //EnviarDatos2(data_corriente,"P,V,d,t,n");
-        //PrintDeltaILCD(deltaI.valor,escala);
-        PrintDeltaVLCD_Calibracion(deltaI,escala);//visualizacion de calibracion
+        PrintDeltaILCD(deltaI.valor,escala);
+        //PrintDeltaVLCD_Calibracion(deltaI,escala);//visualizacion de calibracion
       }else{
         //estamos en holld
         deltaIf = LeerDeltaI(1,escala);//obtenemos deltaI calibrado
@@ -165,7 +165,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
   }
 
   if(y == 16){//tension maxima a medir son +/- 0.256V con resolucion de 0.0078125mV
-    if(x<=100){
+    if(x<=250){
       //debemos mostrar 3 numero con dos punto decimal
       x = x*100.0;
       diezmil = x/10000;
@@ -179,7 +179,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.setCursor(0, 0);
       if(negativo == true){lcd.print("CORRIENTE  A->B  (-)");}else{lcd.print("CORRIENTE  A->B  (+)");}
       lcd.setCursor(0, 3);
-      lcd.print("***Escala: 100mA***");
+      lcd.print("***Escala: 250mA***");
       mostranumero(pos2_unidad,unidad);
       mostranumero(pos2_decena,decena);
       mostranumero(pos2_centena,centena);

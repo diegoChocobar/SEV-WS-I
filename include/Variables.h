@@ -66,8 +66,8 @@ int Iteraciones=40;
 
 int pulsador = 16;            //pin utilizado para el pulsador de cambio de escala
 int input_zero = 14;          //pin utilizado para pulsador de puesta a cero la medicion
-int pulsador_disparo = 12;  //pin utilizado para pulsador selector de potencia de salida
-int pulsador_hold = 13;  //pin utilizado para pulsador selector de potencia de salida
+int pulsador_disparo = 120;  //pin utilizado para pulsador selector de potencia de salida
+int pulsador_hold = 12;  //pin utilizado para pulsador selector de potencia de salida
 int pulsador_select = 188;    //pin utilizado para pulsador selector de potencia de salida
 
 int output_hold = 200;   //pin de salida
