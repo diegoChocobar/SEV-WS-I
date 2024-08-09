@@ -50,9 +50,9 @@ void PrintDeltaVLCD_Calibracion(Corrientes x, int y){
   lcd.home();lcd.clear();
   lcd.setCursor(0, 0);
   if(negativo == true){lcd.print("CORRIENTE  A-B  (-)");}else{lcd.print("CORRIENTE  A-B  (+)");}
-  if(y == 0) {lcd.setCursor(0, 3);lcd.print("*2500mA*");}
-  if(y == 2) {lcd.setCursor(0, 3);lcd.print("*1000mA*");}
-  if(y == 16){lcd.setCursor(0, 3);lcd.print("*100mA**");}
+  if(y == 0) {lcd.setCursor(0, 3);lcd.print("*6000mV*");}
+  if(y == 2) {lcd.setCursor(0, 3);lcd.print("*2000mV*");}
+  if(y == 16){lcd.setCursor(0, 3);lcd.print("*250mV**");}
 
   lcd.setCursor(0, 1);lcd.print("V");lcd.print(x.valor,3);
   lcd.setCursor(9, 1);lcd.print("d");lcd.print(x.desvio_standar,3);

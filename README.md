@@ -81,3 +81,4 @@ Version 2.6 NewScales --> 04-04-2024
 Version 2.7 --> 08/07/2024
     En esta version trabajamos 
     * Mejora de la comunicacion websocket
+    * Mejora de visualizacion en pantalla de calibracion, se visualiza las escalas en mv
