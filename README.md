@@ -82,3 +82,9 @@ Version 2.7 --> 08/07/2024
     En esta version trabajamos 
     * Mejora de la comunicacion websocket
     * Mejora de visualizacion en pantalla de calibracion, se visualiza las escalas en mv
+
+Version 2.7g --> 08/07/2024
+    En esta version trabajamos para la empresa GEOEXPLOAR
+    * Activamos la calibracion.
+    * Cambio en la pantalla de medicion donde se ve el fondo de escala
+    * Cambio en la pantalla de cambio de escala para ver el correcto fondo de escala
