@@ -35,15 +35,10 @@ Corrientes LeerDeltaI(int canal, int escala){
     result.valor = result.valor - offset_1.valor;
   }
 
-  if(result.valor > 5 || result.valor < -5){
+  if(result.valor > 2 || result.valor < -2){
     digitalWrite(output_zumbador, HIGH);
   }else{
     digitalWrite(output_zumbador, LOW);
-    /* Habilitar una vez calibrado
-    if(result.valor < 1 & result.valor > -1){//por debajo de este valor mostramos cero, para evitar oscilaciones pequeñas
-      result.valor = 0;
-    }
-    */
   }
 
 
