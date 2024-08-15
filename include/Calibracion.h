@@ -36,6 +36,8 @@ float Calibrar(float x, int y){//x:tension y:escala
     ///*
       if(x<=250){
         resultado = (x*0.5018)-0.068;
+      }else{
+        resultado = 500;
       }
     //*/
   }
