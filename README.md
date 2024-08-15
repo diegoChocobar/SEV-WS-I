@@ -88,3 +88,4 @@ Version 2.7g --> 08/07/2024
     * Activamos la calibracion.
     * Cambio en la pantalla de medicion donde se ve el fondo de escala
     * Cambio en la pantalla de cambio de escala para ver el correcto fondo de escala
+    * Las oscilaciones cerca del CERO "0" solo se corrigen en la visualización, lo que no nos influye en ninguna otra parte del codigo.

@@ -75,6 +75,11 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
     x = x * -1;
     negativo = true;
   }
+    //* Habilitar una vez calibrado
+    if(x < 0.5){//por debajo de este valor mostramos cero, para evitar oscilaciones pequeñas
+      x = 0;
+    }
+    //*/
 
   if(y == 0){//tension maxima a medir son +/- 6.144V con resolucion de 0.1875mV
     if(x<=2000){

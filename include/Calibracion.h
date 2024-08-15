@@ -9,11 +9,6 @@ float Calibrar(float x, int y){//x:tension y:escala
     x = x * -1;
     negativo = true;
   }
-  /* 
-  if(x<=0.5){//Limite inferior para la lectura de corriente
-    resultado = 0.00;
-  }
-  */
 
   if(y == 0){//tension maxima a medir son +/- 6.144V con resolucion de 0.1875mV
    ///*
