@@ -72,8 +72,8 @@ int pulsador_select = 188;    //pin utilizado para pulsador selector de potencia
 
 int output_hold = 200;   //pin de salida
 int output_led = 2;     //pin de salida led indicador
-int output_zumbador = 1; //pin de salida zumbador
-int output_disparo = 3; //pin de salida disparo
+int output_zumbador = 3; //pin de salida zumbador
+int output_disparo = 1; //pin de salida disparo
 
 
 unsigned long tiempo_actual = 0;
