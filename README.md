@@ -90,6 +90,6 @@ Version 2.71 stable-- 15/08/2024
     * Corregimos la visualizacion en cambio de escala.
     * Las oscilaciones cerca del CERO "0" solo se corrigen en la visualizacion, lo que no nos influye en ninguna otra parte del codigo.
 
-Version 2.71 stable -- 29/08/2024
+Version 2.72 stable -- 29/08/2024
     En esta version trabajamos:
-    * Se cambiaron los pines de I/O para correcto funcionamiento de zumbador
+    * Calibracion Activada
