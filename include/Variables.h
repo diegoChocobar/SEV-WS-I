@@ -23,7 +23,7 @@ struct  Corrientes
 
 ////////////////VARIABLES PARA MANEJO DEL LCD //////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 o 0x20 o 0x3F
+LiquidCrystal_I2C lcd(0x3F,20,4);  // set the LCD address to 0x27 o 0x20 o 0x3F
 
 const int pos1_unidad=17,pos1_decena=12,pos1_centena=8,pos1_mil=4,pos1_diezmil=0;
 const int pos2_unidad=17,pos2_decena=13,pos2_centena=8,pos2_mil=4,pos2_diezmil=0;
@@ -72,8 +72,8 @@ int pulsador_select = 188;    //pin utilizado para pulsador selector de potencia
 
 int output_hold = 200;   //pin de salida
 int output_led = 2;     //pin de salida led indicador
-int output_zumbador = 3; //pin de salida zumbador
-int output_disparo = 1; //pin de salida disparo
+int output_zumbador = 1; //pin de salida zumbador
+int output_disparo = 3; //pin de salida disparo
 
 
 unsigned long tiempo_actual = 0;

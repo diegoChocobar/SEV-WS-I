@@ -93,3 +93,9 @@ Version 2.71 stable-- 15/08/2024
 Version 2.72 stable -- 29/08/2024
     En esta version trabajamos:
     * Cambiamos pines I/O para correcto funcionamiento de zumbador
+
+
+Version 2.72 AguasCatamarca0924 -- 02/09/2024
+    En esta version trabajamos:
+    * Se agrego la calibracion segun las mediciones tomadas.
+    * Se cambio la direccion del lcd para que tenga la correcta y funcione.
