@@ -94,3 +94,7 @@ Version 2.72 stable -- 29/08/2024
     En esta version trabajamos:
     * Cambiamos pines I/O para correcto funcionamiento de zumbador
     * Agregamos Numero de Serie
+  
+Version 2.72 S9001 -- 29/08/2024
+    En esta version trabajamos:
+    * Habilitamos la CALIBRACION.
