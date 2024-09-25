@@ -93,3 +93,4 @@ Version 2.71 stable-- 15/08/2024
 Version 2.72 stable -- 29/08/2024
     En esta version trabajamos:
     * Cambiamos pines I/O para correcto funcionamiento de zumbador
+    * Agregamos Numero de Serie

@@ -85,6 +85,9 @@ unsigned long tiempo_pulsadorD = 0;  //pulsador de selector de disparo
 
 unsigned long tiempo_medida_total = 0;  //pulsador para congelar la señal
 unsigned long tiempo_medida_indiv = 0;  //pulsador para congelar la señal
+
+unsigned int nSerie = 9001;
+
 ////////////////INCIALIZAR wifi /////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////    
 const char* ssid = "SEV_WiFi";
