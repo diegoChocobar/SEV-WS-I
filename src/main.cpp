@@ -46,7 +46,7 @@ void loop(void)
 
     ZeroOffSet();
 
-    Hold();
+    //Hold();
 
     Disparo();
 

@@ -52,7 +52,7 @@ void setup(void)
   //ads.setGain(GAIN_SIXTEEN);constanteADS=0.0078125;escala =16;    // 16x gain  +/- 0.256V  1 bit = 0.125mV  0.0078125mV
 
   //ads.setDataRate(RATE_ADS1115_8SPS);
-  ads.setDataRate(RATE_ADS1115_32SPS);//8;16;32;64;128;250;475;860
+  ads.setDataRate(RATE_ADS1115_64SPS);//8;16;32;64;128;250;475;860
   ads.begin();
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
