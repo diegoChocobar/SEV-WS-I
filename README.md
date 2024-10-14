@@ -95,3 +95,8 @@ Version 2.72 stable -- 29/08/2024
     * Cambiamos pines I/O para correcto funcionamiento de zumbador
     * Agregamos Numero de Serie
     * Cambio del la frecuencia del ADS a 32sps, esto proporciona una medidas con menos ruido
+
+Version 2.73 stable -- 09/09/2024
+    En esta version trabajamos:
+    * Eliminamos el Hold por Button.
+    * Activamos Hold por señal de activacion.

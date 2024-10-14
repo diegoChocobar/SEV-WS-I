@@ -31,13 +31,15 @@ void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
                 webSocket.sendTXT("SEV_I/SEV_C/Disparo/OFF");
                 delay(50);
             }
-            if (strcmp((char*)payload, "SEV_C/SEV_I/Hold/ON") == 0) {
+            if (strcmp((char*)payload, "SEV_C/SEV_I/Hold/ON") == 0 || strcmp((char*)payload, "SEV_V/SEV_I/Hold/ON") == 0 ) {
+                señalhold = true;
                 bandHoldWEB = true;
                 bandHold = false;
                 webSocket.sendTXT("SEV_I/SEV_C/Hold/ON");
                 delay(50);
             }
-            if (strcmp((char*)payload, "SEV_C/SEV_I/Hold/OFF") == 0) {
+            if (strcmp((char*)payload, "SEV_C/SEV_I/Hold/OFF") == 0 || strcmp((char*)payload, "SEV_V/SEV_I/Hold/OFF") == 0) {
+                señalhold = true;
                 bandHoldWEB = true;
                 bandHold = true;
                 webSocket.sendTXT("SEV_I/SEV_C/Hold/OFF");
