@@ -9,11 +9,11 @@ void SaludoInicial();
 
 void setup(void)
 {
-  pinMode(pulsador, INPUT_PULLUP);//Configuramos el pin como entrada pullup
-  digitalWrite(pulsador, HIGH);
+  pinMode(pulsador_escala, INPUT_PULLUP);//Configuramos el pin como entrada pullup
+  digitalWrite(pulsador_escala, HIGH);
 
-  pinMode(input_zero, INPUT_PULLUP);//Configuramos el pin como entrada pullup
-  digitalWrite(input_zero, HIGH);
+  pinMode(pulsador_zero, INPUT_PULLUP);//Configuramos el pin como entrada pullup
+  digitalWrite(pulsador_zero, HIGH);
 
   pinMode(pulsador_select, INPUT_PULLUP);//Configuramos el pin como entrada pullup
   digitalWrite(pulsador_select, HIGH);
@@ -23,6 +23,9 @@ void setup(void)
 
   pinMode(pulsador_disparo, INPUT_PULLUP);//Configuramos el pin como entrada pullup
   digitalWrite(pulsador_disparo, HIGH);
+
+  pinMode(pulsador_fuenteinterna, INPUT_PULLUP);//Configuramos el pin como entrada pullup
+  digitalWrite(pulsador_fuenteinterna, HIGH);
 
   pinMode(output_led, OUTPUT);
   digitalWrite(output_led, LOW);
@@ -86,7 +89,7 @@ void SaludoInicial(){
     lcd.setCursor(0, 0);
     lcd.print("***CDC Elctronics***");
     lcd.setCursor(0, 1);
-    lcd.print("SEV-WS-I --> GIT2.73");
+    lcd.print("SEV-WS-I --> GIT2.74");
     lcd.setCursor(0, 2);
     lcd.print("***N Serie: ");
     lcd.print(nSerie);

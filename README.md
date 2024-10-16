@@ -100,3 +100,8 @@ Version 2.73 stable -- 09/09/2024
     En esta version trabajamos:
     * Eliminamos el Hold por Button.
     * Activamos Hold por señal de activacion.
+
+Version 2.74 stable -- 16/10/2024
+    En esta version trabajamos:
+    * Modificamos los nombre de variables de los pulsador para que sean mas legibles.
+    * Agregamos botton para detectar si estamos trabajando con fuente interna.

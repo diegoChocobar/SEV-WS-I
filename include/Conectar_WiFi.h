@@ -26,12 +26,12 @@ void Conectar_WiFi(){
       //contraseña incorrecta, salimos del bucle
       cont_conexion = 100;
     }
-    if (digitalRead(pulsador) == 0 || digitalRead(input_zero) == 0){
+    if (digitalRead(pulsador_escala) == 0 || digitalRead(pulsador_zero) == 0){
       /* no deseamos conectarnos con software */
       cont_conexion = 100;
       delay(100);//retardo de antirrebote
-      while(digitalRead(pulsador) == 0){delay(10);}//mientras tenemos presionado el pulsador
-      while(digitalRead(input_zero) == 0){delay(10);}//mientras tenemos presionado el pulsador
+      while(digitalRead(pulsador_escala) == 0){delay(10);}//mientras tenemos presionado el pulsador
+      while(digitalRead(pulsador_zero) == 0){delay(10);}//mientras tenemos presionado el pulsador
 
     }
     

@@ -6,7 +6,7 @@ void SelectEscala(void){
     //pasaron 100ms
     tiempo_pulsadorE = tiempo_actual;
     ///*
-    if(digitalRead(pulsador) == 0 && bandHold == false){
+    if(digitalRead(pulsador_escala) == 0 && bandHold == false){
       digitalWrite(output_led, HIGH);
       digitalWrite(output_zumbador, HIGH);
       delay(100);//retardo de antirrebote
@@ -14,7 +14,7 @@ void SelectEscala(void){
       //Serial.print("Cambio de escada.. --> ");
       lcd.setCursor(0, 3);
       lcd.print("Cambio de escala -->");
-      while(digitalRead(pulsador) == 0){delay(10);}//mientras tenemos presionado el pulsador
+      while(digitalRead(pulsador_escala) == 0){delay(10);}//mientras tenemos presionado el pulsador
       
 
         switch (escala) {

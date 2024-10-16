@@ -53,6 +53,7 @@ boolean bandDisparo=true;
 boolean bandDisparoWEB=false;
 boolean bandDisparoWEBAnt=false;
 boolean bandHoldWEB=false;
+boolean bandFuenteInterna=false;
 boolean señalhold = false;
 
 float constanteRshunt = 1.0;
@@ -64,13 +65,14 @@ Corrientes deltaI;
 
 int Iteraciones=40;
 
-int pulsador = 16;            //pin utilizado para el pulsador de cambio de escala
-int input_zero = 14;          //pin utilizado para pulsador de puesta a cero la medicion
-int pulsador_disparo = 12;  //pin utilizado para pulsador selector de potencia de salida
+int pulsador_escala = 16;                 //pin utilizado para el pulsador de cambio de escala
+int pulsador_zero = 14;               //pin utilizado para pulsador de puesta a cero la medicion
+int pulsador_disparo = 12;        //pin utilizado para pulsador selector de potencia de salida
+int pulsador_fuenteinterna = 13; //pin utilizado para pulsador selector de fuente interna
 int pulsador_hold = 187;  //pin utilizado para pulsador selector de potencia de salida
 int pulsador_select = 188;    //pin utilizado para pulsador selector de potencia de salida
 
-int output_hold = 200;   //pin de salida
+
 int output_led = 2;     //pin de salida led indicador
 int output_zumbador = 1; //pin de salida zumbador
 int output_disparo = 3; //pin de salida disparo
@@ -82,6 +84,7 @@ unsigned long tiempo_pulsadorZ = 0;  //pulsador de puesta a caro la medicion
 unsigned long tiempo_pulsadorE = 0;  //pulsador de selector de escala
 unsigned long tiempo_pulsadorH = 0;  //pulsador de congelar medicion
 unsigned long tiempo_pulsadorD = 0;  //pulsador de selector de disparo
+unsigned long tiempo_pulsadorF = 0;
 
 unsigned long tiempo_medida_total = 0;  //pulsador para congelar la señal
 unsigned long tiempo_medida_indiv = 0;  //pulsador para congelar la señal

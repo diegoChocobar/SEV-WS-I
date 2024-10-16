@@ -7,7 +7,7 @@ void ZeroOffSet(void){
     //pasaron 100ms
     tiempo_pulsadorZ = tiempo_actual;
 
-    if(digitalRead(input_zero) == 0 && bandHold == false){
+    if(digitalRead(pulsador_zero) == 0 && bandHold == false){
       if (bandZero == true) {
         bandZero = false;
         digitalWrite(output_led, HIGH);
@@ -17,7 +17,7 @@ void ZeroOffSet(void){
         lcd.setCursor(0, 3);
         lcd.print("****OFF-SET = xx****");//Print en LCD que estamos poniento a cero off-set la medicion
         offset_1 = LeerDeltaI(1,escala);
-        while(digitalRead(input_zero) == 0){delay(10);} //mientras tenememos presionado el pulsador de zero off set
+        while(digitalRead(pulsador_zero) == 0){delay(10);} //mientras tenememos presionado el pulsador de zero off set
         delay(50);
         digitalWrite(output_led, LOW);
         digitalWrite(output_zumbador, LOW);
@@ -30,7 +30,7 @@ void ZeroOffSet(void){
         lcd.setCursor(0, 3);
         lcd.print("***OFF-SET = 0.0 ***");
         //Print en LCD que estamos poniento a cero-cero la medicion
-        while(digitalRead(input_zero) == 0){delay(10);} //mientras tenememos presionado el pulsador de zero off set
+        while(digitalRead(pulsador_zero) == 0){delay(10);} //mientras tenememos presionado el pulsador de zero off set
         offset_1 = {0,0,0,0,0,0,0};
         offset_2 = {0,0,0,0,0,0,0};
         delay(50);

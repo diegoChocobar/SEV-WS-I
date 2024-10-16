@@ -18,6 +18,7 @@
 #include <Hold.h>
 #include <PrintDeltaI.h>
 #include <Disparo.h>
+#include <FuenteInterna.h>
 
 
 void loop(void)
@@ -28,6 +29,7 @@ void loop(void)
   tiempo_pulsadorE = millis();
   tiempo_pulsadorH = millis();
   tiempo_pulsadorD = millis();
+  tiempo_pulsadorF = millis();
 
   ////////Bloque para INICIALIZAR WebSockwt de forma CORRECTA////////////////////
   while(webSocket.isConnected()==false){
@@ -49,6 +51,8 @@ void loop(void)
     Hold();
 
     Disparo();
+
+    FuenteInterna();
 
     delay(10);
 
