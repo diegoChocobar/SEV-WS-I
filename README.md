@@ -105,4 +105,10 @@ Version 2.74 stable -- 16/10/2024
     En esta version trabajamos:
     * Modificamos los nombre de variables de los pulsador para que sean mas legibles.
     * Agregamos botton para detectar si estamos trabajando con fuente interna.
-    * Agregamos delay y funcion de deteccion de conexion WEBSOCKET para evitar que se caiga.s
+    * Agregamos delay y funcion de deteccion de conexion WEBSOCKET para evitar que se caiga
+
+Version 2.75 stable -- 31/10/2024
+    En esta version trabajamos:
+    * Agregamos deteccion modo calibracion, se producion cuando esta precionado el boton de "zero" al incializar
+    * Cuando entramos en modo normal, entramos en la funciones de calibracion segun corresponda.
+    * Cuando entramos en modo calibracion, se activa la visualizacion de calibracion y desactivamos las funciones de calibracion.

@@ -24,8 +24,11 @@ void PrintDeltaI(){
         //EnviarDatos1(data_corriente.desvio_standar,"DesvioStandar");
         //EnviarDatos1(data_corriente.tamaño,"tamaño medidas");
         //EnviarDatos2(data_corriente,"P,V,d,t,n");
-        //PrintDeltaILCD(deltaI.valor,escala);
-        PrintDeltaVLCD_Calibracion(deltaI,escala);//visualizacion de calibracion
+        if(bandCalibrtacion==true){
+            PrintDeltaILCD(deltaI.valor,escala);
+        }else{
+            PrintDeltaVLCD_Calibracion(deltaI,escala);//visualizacion de calibracion
+        }
       }else{
         //estamos en holld
         deltaIf = LeerDeltaI(1,escala);//obtenemos deltaI calibrado

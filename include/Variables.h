@@ -55,6 +55,7 @@ boolean bandDisparoWEBAnt=false;
 boolean bandHoldWEB=false;
 boolean bandFuenteInterna=false;
 boolean señalhold = false;
+boolean bandCalibrtacion = true;
 
 float constanteRshunt = 1.0;
 float constanteProteccion = 1.00; ///constante que tiene la placa de proteccion
