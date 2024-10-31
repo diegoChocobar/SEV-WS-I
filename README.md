@@ -105,3 +105,4 @@ Version 2.74 stable -- 16/10/2024
     En esta version trabajamos:
     * Modificamos los nombre de variables de los pulsador para que sean mas legibles.
     * Agregamos botton para detectar si estamos trabajando con fuente interna.
+    * Agregamos delay y funcion de deteccion de conexion WEBSOCKET para evitar que se caiga.s

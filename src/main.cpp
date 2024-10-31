@@ -42,17 +42,17 @@ void loop(void)
 
     tiempo_actual = millis();
 
-    PrintDeltaI();
+    PrintDeltaI();delay(10);webSocket.loop();
 
-    SelectEscala();
+    SelectEscala();delay(10);webSocket.loop();
 
-    ZeroOffSet();
+    ZeroOffSet();delay(10);webSocket.loop();
 
-    Hold();
+    Hold();delay(10);webSocket.loop();
 
-    Disparo();
+    Disparo();delay(10);webSocket.loop();
 
-    FuenteInterna();
+    FuenteInterna();delay(10);webSocket.loop();
 
     delay(10);
 
