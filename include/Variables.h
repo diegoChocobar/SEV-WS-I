@@ -69,13 +69,13 @@ int Iteraciones=40;
 int pulsador_escala = 16;                 //pin utilizado para el pulsador de cambio de escala
 int pulsador_zero = 14;               //pin utilizado para pulsador de puesta a cero la medicion
 int pulsador_disparo = 12;        //pin utilizado para pulsador selector de potencia de salida
-int pulsador_fuenteinterna = 13; //pin utilizado para pulsador selector de fuente interna
+int pulsador_fuenteinterna = 1; //pin utilizado para pulsador selector de fuente interna
 int pulsador_hold = 187;  //pin utilizado para pulsador selector de potencia de salida
 int pulsador_select = 188;    //pin utilizado para pulsador selector de potencia de salida
 
 
 int output_led = 2;     //pin de salida led indicador
-int output_zumbador = 1; //pin de salida zumbador
+int output_zumbador = 13; //pin de salida zumbador
 int output_disparo = 3; //pin de salida disparo
 
 

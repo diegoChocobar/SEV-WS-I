@@ -112,3 +112,8 @@ Version 2.75 stable -- 31/10/2024
     * Agregamos deteccion modo calibracion, se producion cuando esta precionado el boton de "zero" al incializar
     * Cuando entramos en modo normal, entramos en la funciones de calibracion segun corresponda.
     * Cuando entramos en modo calibracion, se activa la visualizacion de calibracion y desactivamos las funciones de calibracion.
+
+Version 2.76 stable -- 01/11/2024
+    En esta version trabajamos:
+    * Cambiamos los pines del "zumbador" por el de "pulsador de fuente interna" para que el micro inicie sin problemas.
+    
