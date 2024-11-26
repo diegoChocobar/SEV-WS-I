@@ -117,3 +117,7 @@ Version 2.76 stable -- 01/11/2024
     En esta version trabajamos:
     * Cambiamos los pines del "zumbador" por el de "pulsador de fuente interna" para que el micro inicie sin problemas.
     
+Version 2.76 Serie 9002 -- 26/11/2024
+    En esta version trabajamos:
+    * Incluimos la calibracion del equipo
+    * La escala de 1000ma se paso a 800ma debido a que con la calibracion solo llegamos a medir 800ma ahora.
