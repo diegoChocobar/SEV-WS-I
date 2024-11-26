@@ -34,7 +34,7 @@ void SelectEscala(void){
             ads.setGain(GAIN_TWO);constanteADS=0.0625;escala =2; 
             //Serial.println("Escala 2000mV");
             lcd.setCursor(0, 3);
-            lcd.print("***Escala: 1000mA***");
+            lcd.print("***Escala: 800mA***");
           break;
 
           default:

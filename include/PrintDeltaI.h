@@ -128,7 +128,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
   }
 
   if(y == 2){//tension maxima a medir son +/- 2.048V con resolucion de 0.0625mV
-    if(x<=1000){
+    if(x<=800){
       //debemos mostrar 4 numero con un punto decimal
       float xx = 0.0; //numero a redondear
       x = x*10.0;
@@ -145,7 +145,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.setCursor(0, 0);
       if(negativo == true){lcd.print("CORRIENTE  A->B  (-)");}else{lcd.print("CORRIENTE  A->B  (+)");}
       lcd.setCursor(0, 3);
-      lcd.print("***Escala: 1000mA***");
+      lcd.print("***Escala: 800mA***");
       mostranumero(pos1_unidad,unidad);
       mostranumero(pos1_decena,decena);
       if(diezmil==0 && mil==0 && centena==0){}else{mostranumero(pos1_centena,centena);}
@@ -160,7 +160,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
       lcd.setCursor(0, 0);
       lcd.print("***CORRIENTE  A-B***");
       lcd.setCursor(0, 3);
-      lcd.print("***Escala: 1000mA***");
+      lcd.print("***Escala: 800mA***");
       mostranumero(pos1_unidad,8);
       mostranumero(pos1_decena,8);
       mostranumero(pos1_centena,8);

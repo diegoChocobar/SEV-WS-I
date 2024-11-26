@@ -90,7 +90,7 @@ unsigned long tiempo_pulsadorF = 0;
 unsigned long tiempo_medida_total = 0;  //pulsador para congelar la señal
 unsigned long tiempo_medida_indiv = 0;  //pulsador para congelar la señal
 
-unsigned int nSerie = 9001;
+unsigned int nSerie = 9002;
 
 ////////////////INCIALIZAR wifi /////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////    
