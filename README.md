@@ -116,4 +116,8 @@ Version 2.75 stable -- 31/10/2024
 Version 2.76 stable -- 01/11/2024
     En esta version trabajamos:
     * Cambiamos los pines del "zumbador" por el de "pulsador de fuente interna" para que el micro inicie sin problemas.
-    
+
+
+Version 2.76 s1001 -- 05/12/2024
+    En esta version trabajamos:
+    * Calibracion OK
