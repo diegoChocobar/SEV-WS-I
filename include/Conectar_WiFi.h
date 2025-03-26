@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 //si usas esp8266
-#include <ESP8266WiFi.h>
+//#include <ESP8266WiFi.h>
 //#include <WebSocketsClient.h>
 #include <Hash.h>
 
@@ -68,9 +68,9 @@ void Conectar_WiFi(){
           webSocket.setReconnectInterval(5000);  // start heartbeat (optional)
           
           // ping server every 15000 ms
-          // expect pong from server within 3000 ms
+          // expect pong from server within 5000 ms
           // consider connection disconnected if pong is not received 2 times
-          webSocket.enableHeartbeat(15000, 3000, 4);
+          webSocket.enableHeartbeat(15000, 5000, 4);
     /////////////////////////////////////////////////////////////////////////////
 
   }else{

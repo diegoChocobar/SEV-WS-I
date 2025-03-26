@@ -117,3 +117,7 @@ Version 2.76 stable -- 01/11/2024
     En esta version trabajamos:
     * Cambiamos los pines del "zumbador" por el de "pulsador de fuente interna" para que el micro inicie sin problemas.
     
+Version 2.77 stable -- 26/03/2025
+    En esta version trabajamos:
+    * Mejora en caida de conexion WebSocket
+    
