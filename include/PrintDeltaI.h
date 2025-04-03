@@ -79,7 +79,7 @@ void PrintDeltaILCD(float x, int y){//x:corriente y:escala
     negativo = true;
   }
     //* Habilitar una vez calibrado
-    if(x < 0.5){//por debajo de este valor mostramos cero, para evitar oscilaciones pequeñas
+    if(x < 0.1){//por debajo de este valor mostramos cero, para evitar oscilaciones pequeñas
       x = 0;
     }
     //*/
