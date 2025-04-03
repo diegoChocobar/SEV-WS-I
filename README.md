@@ -120,4 +120,8 @@ Version 2.76 stable -- 01/11/2024
 Version 2.77 stable -- 26/03/2025
     En esta version trabajamos:
     * Mejora en caida de conexion WebSocket
-    
+
+Version 2.77 s42025 -- 26/03/2025
+    En esta version trabajamos:
+    * Contiene la calibracion con fuente externa y fuente interna
+    * Numero de Serie: 42025. Este equipo pertenece a GEOCON la Plata -Guillermo Espinosa-
