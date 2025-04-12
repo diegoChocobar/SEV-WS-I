@@ -121,4 +121,7 @@ Version 2.77 stable -- 03/04/2025
     En esta version trabajamos:
     * Mejora en caida de conexion WebSocket
     * Mejoramos la visualización de una corriente mas pequeña cuando no estamos en calibracion  
-    
+
+Version 2.78 stable -- 12/04/2025
+    En esta version trabajamos:
+    * Mejora en caida de conexion WebSocket, los tiempo de espera de  reconexion son minimos.

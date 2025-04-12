@@ -42,28 +42,25 @@ void loop(void)
 
     tiempo_actual = millis();
 
-    PrintDeltaI();delay(10);webSocket.loop();
+    PrintDeltaI();delay(10);
+    SelectEscala();delay(10);
 
-    SelectEscala();delay(10);webSocket.loop();
-
-    ZeroOffSet();delay(10);webSocket.loop();
-
-    Hold();delay(10);webSocket.loop();
-
-    Disparo();delay(10);webSocket.loop();
-
-    FuenteInterna();delay(10);webSocket.loop();
-
+    ZeroOffSet();delay(10);
+    Hold();delay(10);
+    Disparo();delay(10);
+    FuenteInterna();delay(10);
     delay(10);
 
     webSocket.loop();
 
 
   ////////Bloque para RE-INICIALIZAR WebSockwt en caso que se CAIGA////////////////////
+  
   while(webSocket.isConnected()==false){
     webSocket.loop();
     delay(10);
   }
+
   ///////////////////////////////////////////////////////////////////////////////
 
 

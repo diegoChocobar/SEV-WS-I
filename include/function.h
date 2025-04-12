@@ -12,7 +12,7 @@ void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
 		case WStype_CONNECTED:
             lcd.setCursor(0, 0);
             lcd.print("WSocket I OK");
-            delay(2000);
+            delay(100);
 			break;
 		case WStype_TEXT:
 

@@ -65,7 +65,7 @@ void Conectar_WiFi(){
           // event handler
           webSocket.onEvent(webSocketEvent);
           // try ever 5000 again if connection has failed
-          webSocket.setReconnectInterval(5000);  // start heartbeat (optional)
+          webSocket.setReconnectInterval(100);  // start heartbeat (optional)
           
           // ping server every 15000 ms
           // expect pong from server within 5000 ms
