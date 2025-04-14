@@ -125,3 +125,4 @@ Version 2.77 stable -- 03/04/2025
 Version 2.78 stable -- 12/04/2025
     En esta version trabajamos:
     * Mejora en caida de conexion WebSocket, los tiempo de espera de  reconexion son minimos.
+    * Correccion de comentarios de escalas en calibracion (no afecta al codigo)

@@ -10,7 +10,7 @@ float Calibrar(float x, int y){//x:tension y:escala
     negativo = true;
   }
 
-  if(y == 0){//tension maxima a medir son +/- 2.048V con resolucion de 0.0625mV
+  if(y == 0){//tension maxima a medir son +/- 6.144V con resolucion de 0.0625mV
    ///*
     //*/
   }
@@ -43,7 +43,7 @@ float CalibrarFI(float x, int y){//x:tension y:escala
     negativo = true;
   }
 
-  if(y == 0){//tension maxima a medir son +/- 2.048V con resolucion de 0.0625mV
+  if(y == 0){//tension maxima a medir son +/- 6.144V con resolucion de 0.0625mV
    ///*
     //*/
   }
